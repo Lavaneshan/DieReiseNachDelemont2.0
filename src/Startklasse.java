@@ -19,7 +19,7 @@ public class Startklasse extends JFrame implements ActionListener {
 		this.setSize(800, 600);
 		background.setBackground(new Color(255, 255, 255));
 		background.setBounds(getBounds());
-		titel.setIcon(new ImageIcon("C:\\Users\\Lara-School\\eclipse-workspace\\Die phantastische Reise nach Delémont\\Die phantastische Reise nach Delémont\\src\\logo2.jpg"));
+		titel.setIcon(new ImageIcon(".\\src\\Bilder\\logo2.jpg"));
 		background.setVisible(true);
 		background.setLayout(null);
 		this.setResizable(false);
@@ -45,7 +45,9 @@ public class Startklasse extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		dispose();
-		SpielerGui spieler = new SpielerGui();
+		SpielerGui1 sg1 = new SpielerGui1();
+		SpielerGui2 sg2= new SpielerGui2();
+		sg1.Action();
 		// Startfenster schliessen
 	}
 
