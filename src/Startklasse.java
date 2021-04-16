@@ -45,9 +45,8 @@ public class Startklasse extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		dispose();
-		SpielerGui1 sg1 = new SpielerGui1();
-		SpielerGui2 sg2= new SpielerGui2();
-		sg1.Action();
+		SpielerNamenGui sg = new SpielerNamenGui();
+		
 		// Startfenster schliessen
 	}
 

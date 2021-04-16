@@ -43,6 +43,7 @@ public class Würfeln extends JButton implements ActionListener {
 
 				this.setIcon(new ImageIcon(".\\src\\Bilder\\Würfel1.png"));
 				this.setText("");
+				
 
 			} else if (Würfeln == 2) {
 

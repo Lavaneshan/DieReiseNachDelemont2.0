@@ -5,6 +5,7 @@ public class SpielFeldLogik extends SpielFeldGui {
 	
 	
 	public SpielFeldLogik() {
+		
 
 	
 	
