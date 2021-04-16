@@ -44,26 +44,32 @@ public class Würfeln extends JButton implements ActionListener {
 				this.setIcon(new ImageIcon(".\\src\\Bilder\\Würfel1.png"));
 				this.setText("");
 				
+				
 
 			} else if (Würfeln == 2) {
 
 				this.setIcon(new ImageIcon(".\\src\\Bilder\\Würfel2.png"));
 				this.setText("");
+				
 			} else if (Würfeln == 3) {
 
 				this.setIcon(new ImageIcon(".\\src\\Bilder\\Würfel3.png"));
 				this.setText("");
+				
 			} else if (Würfeln == 4) {
 
 				this.setIcon(new ImageIcon(".\\src\\Bilder\\Würfel4.png"));
 				this.setText("");
+				
 			} else if (Würfeln == 5) {
 
 				this.setIcon(new ImageIcon(".\\src\\Bilder\\Würfel5.png"));
 				this.setText("");
+				
 			} else if (Würfeln == 6) {
 				this.setIcon(new ImageIcon(".\\src\\Bilder\\Würfel6.png"));
 				this.setText("");
+				
 			}
 
 		}
