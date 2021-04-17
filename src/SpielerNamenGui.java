@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -60,6 +61,7 @@ public class SpielerNamenGui extends JFrame implements ActionListener{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				SpielFeldGui gui= new SpielFeldGui();
 				
 			}

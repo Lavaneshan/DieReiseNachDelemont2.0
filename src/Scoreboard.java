@@ -1,4 +1,5 @@
 
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +21,7 @@ public class Scoreboard extends JLabel{
 
 		this.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
 		this.setBorder(border);
-		this.setBounds(800, 210, 150, 150);
+		this.setBounds(0, 210, 150, 150);
 		this.setOpaque(true);
 		this.setBackground(Color.white);
 		this.setText("Scoreboard");
