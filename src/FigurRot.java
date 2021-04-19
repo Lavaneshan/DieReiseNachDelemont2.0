@@ -6,9 +6,7 @@ import javax.swing.JLabel;
 
 public class FigurRot extends JLabel {
 
-	int x;
-	int y;
-	int abstand = 20;
+
 
 	public FigurRot() {
 

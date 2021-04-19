@@ -132,11 +132,11 @@ public class SpielFeldGui extends JFrame implements ActionListener {
 				feld1 = 0;
 				feld2 = 0;
 				turn = 1;
-				
+
 				fr.setLocation(olten.getX() + 50, olten.getY() + 10);
 				fb.setLocation(olten.getLocation());
 				SpielFeldGui sf = null;
-				JOptionPane.showMessageDialog(sf,"Spiel fängt wieder von vorn an!");
+				JOptionPane.showMessageDialog(sf, "Spiel fängt wieder von vorn an!");
 			}
 		}
 
@@ -177,10 +177,8 @@ public class SpielFeldGui extends JFrame implements ActionListener {
 			this.MoveRed();
 			this.AktionWurfel();
 			this.feld2 = getFeld2() + Würfeln;
-			System.out.println(sfl.fields.get(feld2));
 
 			this.GewinnerRot();
-			System.out.println("ROT");
 
 		} else if (turn == 2 || turn == 4 || turn == 6 || turn == 8 || turn == 10 || turn == 12 || turn == 14
 				|| turn == 16 || turn == 18 || turn == 20) {
@@ -188,10 +186,8 @@ public class SpielFeldGui extends JFrame implements ActionListener {
 			this.MoveBlue();
 			this.AktionWurfel();
 			this.feld1 = getFeld1() + Würfeln;
-			System.out.println(sfl.fields.get(feld1));
 
 			this.GewinnerBlau();
-			System.out.println("BLAU");
 
 		}
 		turn++;
@@ -202,7 +198,6 @@ public class SpielFeldGui extends JFrame implements ActionListener {
 
 		Random r = new Random();
 		Würfeln = r.nextInt(6) + 1;
-		System.out.println(Würfeln);
 
 		if (Würfeln == 1) {
 
@@ -340,32 +335,32 @@ public class SpielFeldGui extends JFrame implements ActionListener {
 			fb.setLocation(delemont.getLocation());
 
 			JOptionPane.showMessageDialog(null, "Blau hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		} else if (feld1 == 16 && Würfeln == 5 || feld1 == 17 && Würfeln == 5 || feld1 == 18 && Würfeln == 5
 				|| feld1 == 19 && Würfeln == 5) {
 
 			fb.setLocation(delemont.getLocation());
 
 			JOptionPane.showMessageDialog(null, "Blau hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		} else if (feld1 == 17 && Würfeln == 4 || feld1 == 18 && Würfeln == 4 || feld1 == 19 && Würfeln == 4) {
 
 			fb.setLocation(delemont.getLocation());
 
 			JOptionPane.showMessageDialog(null, "Blau hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		} else if (feld1 == 18 && Würfeln == 3 || feld1 == 19 && Würfeln == 3) {
 
 			fb.setLocation(delemont.getLocation());
 
 			JOptionPane.showMessageDialog(null, "Blau hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		} else if (feld1 == 19 && Würfeln == 2) {
 
 			fb.setLocation(delemont.getLocation());
 
 			JOptionPane.showMessageDialog(null, "Blau hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		}
 
 	}
@@ -472,43 +467,33 @@ public class SpielFeldGui extends JFrame implements ActionListener {
 
 			fr.setLocation(delemont.getLocation());
 
-			System.out.println(Würfeln + "Test1");
-
 			JOptionPane.showMessageDialog(null, "Rot hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		} else if (feld2 == 16 && Würfeln == 5 || feld2 == 17 && Würfeln == 5 || feld2 == 18 && Würfeln == 5
 				|| feld2 == 19 && Würfeln == 5) {
 
 			fr.setLocation(delemont.getLocation());
 
-			System.out.println(Würfeln + "Test2");
-
 			JOptionPane.showMessageDialog(null, "Rot hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		} else if (feld2 == 17 && Würfeln == 4 || feld2 == 18 && Würfeln == 4 || feld2 == 19 && Würfeln == 4) {
 
 			fr.setLocation(delemont.getLocation());
 
-			System.out.println(Würfeln + "Test3");
-
 			JOptionPane.showMessageDialog(null, "Rot hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		} else if (feld2 == 18 && Würfeln == 3 || feld2 == 19 && Würfeln == 3) {
 
 			fr.setLocation(delemont.getLocation());
 
-			System.out.println(Würfeln + "Test4");
-
 			JOptionPane.showMessageDialog(null, "Rot hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		} else if (feld2 == 19 && Würfeln == 2) {
 
 			fr.setLocation(delemont.getLocation());
 
-			System.out.println(Würfeln + "Test5");
-
 			JOptionPane.showMessageDialog(null, "Rot hat gewonnen!", "Gewinner", JOptionPane.NO_OPTION);
-			System.out.println("ende");
+
 		}
 	}
 

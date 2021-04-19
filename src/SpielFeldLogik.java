@@ -35,17 +35,6 @@ public class SpielFeldLogik {
 		fields.add("zwingen");
 		fields.add("laufen");
 		fields.add("delemont");
-		fields.add("fill");
-		fields.add("fill");
-		fields.add("fill");
-		fields.add("fill");
-		fields.add("fill");
-		fields.add("fill");
-		fields.add("fill");
-		fields.add("fill");
-		fields.add("fill");
-		fields.add("fill");
-		fields.add("fill");
 
 
 	}
