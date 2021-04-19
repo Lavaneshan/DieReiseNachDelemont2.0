@@ -5,18 +5,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class SpielerNamenGui extends JFrame implements ActionListener{
+public class SpielerNamenGui extends JFrame implements ActionListener {
 
-	JTextField TextSpieler1 = new JTextField("Spieler 1");
-	JTextField TextSpieler2 = new JTextField("Spieler 2");
 	JButton ButtonFigurBlau = new JButton(" Blau ");
-	JButton ButtonFigurGelb = new JButton(" Rot ");
-	JButton weiter= new JButton("weiter");
-
+	JButton ButtonFigurRot = new JButton(" Rot ");
+	JButton weiter = new JButton("weiter");
+	JLabel BildBlau = new JLabel();
+	JLabel BildRot = new JLabel();
+	int klick = 1;
 
 	public SpielerNamenGui() {
 
@@ -26,18 +28,13 @@ public class SpielerNamenGui extends JFrame implements ActionListener{
 		this.setLayout(null);
 		this.setTitle("Spielernamen");
 
-		TextSpieler1.setBounds(220, 100, 400, 100);
-		TextSpieler1.setVisible(true);
-		TextSpieler1.setBorder(BorderFactory.createLineBorder(Color.black));
-		TextSpieler1.setFont(new Font("Verdana", Font.PLAIN, 20));
-		this.add(TextSpieler1);
-		
+		BildBlau.setBounds(275, 100, 300, 300);
+		BildBlau.setIcon(new ImageIcon(".\\src\\Bilder\\Blaue_Spielfigur.png"));
+		this.add(BildBlau);
 
-		TextSpieler2.setBounds(220, 100, 400, 100);
-		TextSpieler2.setVisible(false);
-		TextSpieler2.setBorder(BorderFactory.createLineBorder(Color.black));
-		TextSpieler2.setFont(new Font("Verdana", Font.PLAIN, 20));
-		this.add(TextSpieler2);
+		BildRot.setBounds(525, 100, 300, 300);
+		BildRot.setIcon(new ImageIcon(".\\src\\Bilder\\Rote_Spielfigur.png"));
+		this.add(BildRot);
 
 		ButtonFigurBlau.setBounds(200, 300, 200, 100);
 		ButtonFigurBlau.setFont(new Font("Verdana", Font.PLAIN, 20));
@@ -46,66 +43,60 @@ public class SpielerNamenGui extends JFrame implements ActionListener{
 		this.add(ButtonFigurBlau);
 		ButtonFigurBlau.addActionListener(this);
 
-		ButtonFigurGelb.setBounds(450, 300, 200, 100);
-		ButtonFigurGelb.setFont(new Font("Verdana", Font.PLAIN, 20));
-		ButtonFigurGelb.setBackground(Color.red);
-		ButtonFigurGelb.setForeground(Color.black);
-		this.add(ButtonFigurGelb);
-		ButtonFigurGelb.addActionListener(this);
-		
+		ButtonFigurRot.setBounds(450, 300, 200, 100);
+		ButtonFigurRot.setFont(new Font("Verdana", Font.PLAIN, 20));
+		ButtonFigurRot.setBackground(Color.red);
+		ButtonFigurRot.setForeground(Color.black);
+		this.add(ButtonFigurRot);
+		ButtonFigurRot.addActionListener(this);
+
 		weiter.setBounds(650, 500, 100, 30);
 		weiter.setVisible(false);
 		weiter.setBackground(Color.white);
 		weiter.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		this.add(weiter);
 		weiter.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				SpielFeldGui gui= new SpielFeldGui();
-				
+				SpielFeldGui gui = new SpielFeldGui();
+
 			}
 		});
-	}	
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (TextSpieler1.isVisible()) {
-			TextSpieler1.getText();
-			if(e.getSource()== ButtonFigurBlau) {
-				ButtonFigurBlau.setText(TextSpieler1.getText());
-				ButtonFigurBlau.setEnabled(false);
-				
-			}
-			else if(e.getSource()==ButtonFigurGelb){
-				ButtonFigurGelb.setText(TextSpieler1.getText());
-				ButtonFigurGelb.setEnabled(false);
-			
-			}
-			TextSpieler1.setVisible(false);
-			TextSpieler2.setVisible(true);
-			
-		}
-		else if(TextSpieler2.isVisible()){
-			TextSpieler2.getText();
-			if(e.getSource()== ButtonFigurBlau) {
-				ButtonFigurBlau.setText(TextSpieler2.getText());
-				ButtonFigurBlau.setEnabled(false);
-				
-			}
-			else if(e.getSource()==ButtonFigurGelb){
-				ButtonFigurGelb.setText(TextSpieler2.getText());
-				ButtonFigurGelb.setEnabled(false);
-			
-			}
-			weiter.setVisible(true);
-			
-		}
-	}
-		
 
-		
-		
-		
-	
+		if (klick == 1) {
+
+			if (e.getSource() == ButtonFigurBlau) {
+				ButtonFigurBlau.setText("Spieler 1");
+				ButtonFigurBlau.setEnabled(false);
+
+			} else if (e.getSource() == ButtonFigurRot) {
+				ButtonFigurRot.setText("Spieler 1");
+				ButtonFigurRot.setEnabled(false);
+
+			}
+			klick++;
+
+		} else if (klick == 2) {
+
+			if (e.getSource() == ButtonFigurBlau) {
+				ButtonFigurBlau.setText("Spieler 2");
+				ButtonFigurBlau.setEnabled(false);
+
+			} else if (e.getSource() == ButtonFigurRot) {
+				ButtonFigurRot.setText("Spieler 2");
+				ButtonFigurRot.setEnabled(false);
+
+			}
+
+		}
+
+		weiter.setVisible(true);
+
+	}
 }

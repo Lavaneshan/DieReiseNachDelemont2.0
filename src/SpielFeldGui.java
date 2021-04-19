@@ -25,11 +25,11 @@ public class SpielFeldGui extends JFrame implements ActionListener {
 	JLabel labelArrow3 = new JLabel();
 
 	Aufgeben buttonAufgeben = new Aufgeben();
+	JButton ResetButton = new JButton();
 	JPanel scorePanel = new JPanel();
 	FigurBlau fb = new FigurBlau();
 	FigurRot fr = new FigurRot();
 	Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
-	JLabel ScoreBoard = new JLabel();
 	JButton buttonWürfel = new JButton();
 	SpielFeldLogik sfl = new SpielFeldLogik();
 	SpielerNamenGui sgn;
@@ -77,7 +77,7 @@ public class SpielFeldGui extends JFrame implements ActionListener {
 		scorePanel.setVisible(true);
 		scorePanel.setOpaque(false);
 
-		scorePanel.add(ScoreBoard);
+		scorePanel.add(ResetButton);
 		scorePanel.add(buttonWürfel);
 		scorePanel.add(buttonAufgeben);
 
@@ -115,12 +115,32 @@ public class SpielFeldGui extends JFrame implements ActionListener {
 		fieldPanel.add(labelArrow2);
 		fieldPanel.add(labelArrow3);
 
-		ScoreBoard.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
-		ScoreBoard.setBorder(border);
-		ScoreBoard.setBounds(0, 210, 150, 150);
-		ScoreBoard.setOpaque(true);
-		ScoreBoard.setVisible(true);
-		ScoreBoard.setEnabled(false);
+		ResetButton.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
+		ResetButton.setBorder(border);
+		ResetButton.setBounds(0, 210, 150, 150);
+		ResetButton.setOpaque(true);
+		ResetButton.setVisible(true);
+		ResetButton.setBackground(Color.white);
+		ResetButton.setText("Reset");
+
+		ResetButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				Würfeln = 1;
+				feld1 = 0;
+				feld2 = 0;
+				turn = 1;
+				
+				fr.setLocation(olten.getX() + 50, olten.getY() + 10);
+				fb.setLocation(olten.getLocation());
+				SpielFeldGui sf = null;
+				JOptionPane.showMessageDialog(sf,"Spiel fängt wieder von vorn an!");
+			}
+		}
+
+		);
 
 		buttonWürfel.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
 		buttonWürfel.setBorder(border);
