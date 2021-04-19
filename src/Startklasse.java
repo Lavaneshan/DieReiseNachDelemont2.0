@@ -3,8 +3,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 
 public class Startklasse extends JFrame implements ActionListener {
+
 	JPanel background = new JPanel();
 
 	JLabel titel = new JLabel();
@@ -47,7 +49,7 @@ public class Startklasse extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		dispose();
 		SpielerNamenGui sg = new SpielerNamenGui();
-		
+
 		// Startfenster schliessen
 	}
 

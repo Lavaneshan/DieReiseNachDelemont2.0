@@ -1,6 +1,4 @@
 
-
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,11 +9,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 import javax.swing.border.Border;
+import javax.swing.plaf.ColorUIResource;
 
 public class Aufgeben extends JButton implements ActionListener {
 
 	protected Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
+	UIManager UI = new UIManager();
 
 	public Aufgeben() {
 
@@ -25,7 +26,7 @@ public class Aufgeben extends JButton implements ActionListener {
 		this.setBackground(Color.WHITE);
 		this.setOpaque(true);
 		this.setIcon(new ImageIcon(".\\src\\Bilder\\GiveUp.png"));
-		
+
 		this.addActionListener(this);
 
 	}
@@ -34,7 +35,17 @@ public class Aufgeben extends JButton implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == this) {
-			System.exit(0);
+
+			int response = JOptionPane.showConfirmDialog(this, "Möchtest du wirklich das Spiel beenden?", "Aufgeben",
+					JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+			if (response == JOptionPane.YES_OPTION) {
+				System.exit(0);
+			} else if (response == JOptionPane.NO_OPTION) {
+
+			} else if (response == JOptionPane.CLOSED_OPTION) {
+
+			}
 
 		}
 

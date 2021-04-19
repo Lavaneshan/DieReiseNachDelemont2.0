@@ -14,8 +14,9 @@ public class SpielerNamenGui extends JFrame implements ActionListener{
 	JTextField TextSpieler1 = new JTextField("Spieler 1");
 	JTextField TextSpieler2 = new JTextField("Spieler 2");
 	JButton ButtonFigurBlau = new JButton(" Blau ");
-	JButton ButtonFigurGelb = new JButton(" Gelb ");
+	JButton ButtonFigurGelb = new JButton(" Rot ");
 	JButton weiter= new JButton("weiter");
+
 
 	public SpielerNamenGui() {
 
@@ -47,7 +48,7 @@ public class SpielerNamenGui extends JFrame implements ActionListener{
 
 		ButtonFigurGelb.setBounds(450, 300, 200, 100);
 		ButtonFigurGelb.setFont(new Font("Verdana", Font.PLAIN, 20));
-		ButtonFigurGelb.setBackground(Color.yellow);
+		ButtonFigurGelb.setBackground(Color.red);
 		ButtonFigurGelb.setForeground(Color.black);
 		this.add(ButtonFigurGelb);
 		ButtonFigurGelb.addActionListener(this);
@@ -74,10 +75,12 @@ public class SpielerNamenGui extends JFrame implements ActionListener{
 			if(e.getSource()== ButtonFigurBlau) {
 				ButtonFigurBlau.setText(TextSpieler1.getText());
 				ButtonFigurBlau.setEnabled(false);
+				
 			}
 			else if(e.getSource()==ButtonFigurGelb){
 				ButtonFigurGelb.setText(TextSpieler1.getText());
 				ButtonFigurGelb.setEnabled(false);
+			
 			}
 			TextSpieler1.setVisible(false);
 			TextSpieler2.setVisible(true);
@@ -88,10 +91,12 @@ public class SpielerNamenGui extends JFrame implements ActionListener{
 			if(e.getSource()== ButtonFigurBlau) {
 				ButtonFigurBlau.setText(TextSpieler2.getText());
 				ButtonFigurBlau.setEnabled(false);
+				
 			}
 			else if(e.getSource()==ButtonFigurGelb){
 				ButtonFigurGelb.setText(TextSpieler2.getText());
 				ButtonFigurGelb.setEnabled(false);
+			
 			}
 			weiter.setVisible(true);
 			

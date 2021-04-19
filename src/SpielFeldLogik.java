@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -7,25 +6,56 @@ import javax.swing.JLabel;
 
 public class SpielFeldLogik {
 
-	ArrayList<Field> fields = new ArrayList<Field>();
+	ArrayList<String> fields = new ArrayList<String>();
 
-	FIgurBlau blau;
-	Würfeln wurfel;
+	FigurBlau blau;
 	SpielFeldGui gui;
+	
 
 	public SpielFeldLogik() {
+		
+	
+		fields.add("olten");
+		fields.add("tecknau");
+		fields.add("gelterkinden");
+		fields.add("sissach");
+		fields.add("itingen");
+		fields.add("lausen");
+		fields.add("liestal");
+		fields.add("frenkdendorf");
+		fields.add("pratteln");
+		fields.add("muttenz");
+		fields.add("basel");
+		fields.add("dreispitz");
+		fields.add("muenchenstein");
+		fields.add("arlesheim");
+		fields.add("aesch");
+		fields.add("duggingen");
+		fields.add("grellingen");
+		fields.add("zwingen");
+		fields.add("laufen");
+		fields.add("delemont");
+		fields.add("fill");
+		fields.add("fill");
+		fields.add("fill");
+		fields.add("fill");
+		fields.add("fill");
+		fields.add("fill");
+		fields.add("fill");
+		fields.add("fill");
+		fields.add("fill");
+		fields.add("fill");
+		fields.add("fill");
 
-		System.out.println(fields.get(1));
-		for (int i = 1; i <= 20; i++) {
-			wurfel.getFeld();
-			fields.get(wurfel.getFeld());
-			System.out.println("Feld logik: " + wurfel.getFeld());
-
-		}
 
 	}
-	public static void main(String[] args) {
-		SpielFeldLogik logik= new SpielFeldLogik();
+
+	public void setFields(ArrayList<String> fields) {
+		this.fields = getFields();
+	}
+
+	public ArrayList<String> getFields() {
+		return fields;
 	}
 
 }
